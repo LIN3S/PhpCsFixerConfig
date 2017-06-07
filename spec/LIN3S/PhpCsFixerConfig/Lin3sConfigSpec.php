@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Spec\LIN3S\PhpCsFixerConfig;
+namespace spec\LIN3S\PhpCsFixerConfig;
 
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 use PhpSpec\ObjectBehavior;

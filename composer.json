@@ -29,11 +29,10 @@
     },
     "autoload": {
         "psr-4": {
-            "LIN3S\\PhpCsFixerConfig\\": "src/LIN3S/PhpCsFixerConfig/",
-            "LIN3S\\PhpCsFixerConfig\\Tests\\": "tests/"
+            "LIN3S\\PhpCsFixerConfig\\": "src/LIN3S/PhpCsFixerConfig/"
         },
         "exclude-from-classmap": [
-          "tests/"
+          "spec/"
         ]
     }
 }
