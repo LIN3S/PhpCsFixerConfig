@@ -16,6 +16,9 @@ namespace spec\LIN3S\PhpCsFixerConfig;
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 use PhpSpec\ObjectBehavior;
 
+/**
+ * @author Beñat Espiña <benatespina@gmail.com>
+ */
 class Lin3sConfigSpec extends ObjectBehavior
 {
     function it_gets_rules_array()
@@ -27,7 +30,7 @@ class Lin3sConfigSpec extends ObjectBehavior
 
     function it_gets_required_visibility_rule_when_is_phpspec_configuration()
     {
-        $this->beConstructedWith('Our awesome project', '2017', true);
+        $this->beConstructedWith('Our awesome project', '2017', 'project', true);
         $this->getRules()->shouldBeArray();
         $this->getRules()->shouldHaveKeyWithValue('visibility_required', false);
     }

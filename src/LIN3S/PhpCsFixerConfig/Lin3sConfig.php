@@ -16,6 +16,9 @@ namespace LIN3S\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
 
+/**
+ * @author Beñat Espiña <benatespina@gmail.com>
+ */
 final class Lin3sConfig extends Config
 {
     const HEADER = <<<EOF
