@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpCsFixerConfig project.
+ * This file is part of the PhpCsFixerConfig library.
  *
  * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *

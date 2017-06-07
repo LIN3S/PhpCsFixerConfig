@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpCsFixerConfig library project.
+ * This file is part of the PhpCsFixerConfig library.
  *
  * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *
@@ -19,7 +19,7 @@ use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
 final class Lin3sConfig extends Config
 {
     const HEADER = <<<EOF
-This file is part of the %s project.
+This file is part of the %s %s.
 
 Copyright (c) %s-present LIN3S <info@lin3s.com>
 
@@ -28,15 +28,17 @@ file that was distributed with this source code.
 EOF;
 
     private $name;
-    private $isPhpSpec;
     private $year;
+    private $type;
+    private $isPhpSpec;
 
-    public function __construct($name, $year, $isPhpSpec = false)
+    public function __construct($name, $year, $type = 'project', $isPhpSpec = false)
     {
         parent::__construct('lin3s');
         $this->setRiskyAllowed(true);
         $this->isPhpSpec = $isPhpSpec;
         $this->name = $name;
+        $this->type = $type;
         $this->year = $year;
     }
 
@@ -168,7 +170,7 @@ EOF;
 
     private function header() : string
     {
-        return sprintf(self::HEADER, $this->name, $this->year);
+        return sprintf(self::HEADER, $this->name, $this->type, $this->year);
     }
 
     private function setPhpSpecRules(array $rules) : array

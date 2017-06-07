@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new Lin3sConfig('PhpCsFixerConfig', '2017', true);
+$config = new Lin3sConfig('PhpCsFixerConfig', '2017', 'library', true);
 $config->getFinder()
     ->in(__DIR__ . '/spec')
     ->name('*Spec.php');

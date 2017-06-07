@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new Lin3sConfig('PhpCsFixerConfig library', '2017');
+$config = new Lin3sConfig('PhpCsFixerConfig', '2017', 'library');
 $config->getFinder()->in(__DIR__ . '/src');
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;

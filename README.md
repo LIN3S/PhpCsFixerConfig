@@ -29,7 +29,7 @@ declare(strict_types=1);
 
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new Lin3sConfig('LIN3S awesome project', '2017');
+$config = new Lin3sConfig('LIN3S awesome project', '2017', 'project');
 $config->getFinder()->in(__DIR__ . '/src');
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
@@ -55,7 +55,7 @@ declare(strict_types=1);
 
 use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new Lin3sConfig('LIN3S awesome project', '2017', true);
+$config = new Lin3sConfig('LIN3S awesome project', '2017', 'project', true);
 $config->getFinder()
     ->in(__DIR__ . '/spec')
     ->name('*Spec.php');
