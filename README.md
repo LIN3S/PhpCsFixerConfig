@@ -1,7 +1,7 @@
 # LIN3S PHP CS Fixer Config
 >PHP linting tool using [PHP CS Fixer][2] for [LIN3S][1] projects
 
-[![Build Status](https://travis-ci.org/lin3s/PhpCsFixerConfig.svg?branch=master)](https://travis-ci.org/lin3s/PhpCsFixerConfig)
+[![Build Status](https://travis-ci.org/LIN3S/PhpCsFixerConfig.svg?branch=master)](https://travis-ci.org/LIN3S/PhpCsFixerConfig)
 
 It's based on [`kreta/php-cs-fixer-config`](https://github.com/kreta/php-cs-fixer-config/).
 
