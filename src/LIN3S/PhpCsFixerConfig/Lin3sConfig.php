@@ -1,10 +1,9 @@
 <?php
 
 /*
- * This file is part of the Kreta package.
+ * This file is part of the PhpCsFixerConfig library project.
  *
- * (c) Beñat Espiña <benatespina@gmail.com>
- * (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,30 +11,33 @@
 
 declare(strict_types=1);
 
-namespace Kreta\PhpCsFixerConfig;
+namespace LIN3S\PhpCsFixerConfig;
 
 use PhpCsFixer\Config;
 use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
 
-final class KretaConfig extends Config
+final class Lin3sConfig extends Config
 {
     const HEADER = <<<EOF
-This file is part of the Kreta package.
+This file is part of the %s project.
 
-(c) Beñat Espiña <benatespina@gmail.com>
-(c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+Copyright (c) %s-present LIN3S <info@lin3s.com>
 
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 EOF;
 
+    private $name;
     private $isPhpSpec;
+    private $year;
 
-    public function __construct($isPhpSpec = false)
+    public function __construct($name, $year, $isPhpSpec = false)
     {
-        parent::__construct('kreta');
+        parent::__construct('lin3s');
         $this->setRiskyAllowed(true);
         $this->isPhpSpec = $isPhpSpec;
+        $this->name = $name;
+        $this->year = $year;
     }
 
     public function getRules() : array
@@ -65,7 +67,7 @@ EOF;
             'general_phpdoc_annotation_remove'            => true,
             'hash_to_slash_comment'                       => true,
             'header_comment'                              => [
-                'header'      => self::HEADER,
+                'header'      => $this->header(),
                 'commentType' => HeaderCommentFixer::HEADER_COMMENT,
                 'location'    => 'after_open',
             ],
@@ -159,6 +161,18 @@ EOF;
             'whitespace_after_comma_in_array'             => true,
         ];
 
+        $rules = $this->setPhpSpecRules($rules);
+
+        return $rules;
+    }
+
+    private function header() : string
+    {
+        return sprintf(self::HEADER, $this->name, $this->year);
+    }
+
+    private function setPhpSpecRules(array $rules) : array
+    {
         if (true === $this->isPhpSpec) {
             $rules = array_merge($rules, [
                 'visibility_required' => false,

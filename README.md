@@ -1,14 +1,13 @@
-# Kreta PHP CS Fixer Config
->PHP linting tool using [PHP CS Fixer][2] for [Kreta][1] packages
+# LIN3S PHP CS Fixer Config
+>PHP linting tool using [PHP CS Fixer][2] for [LIN3S][1] projects
 
-[![Build Status](https://travis-ci.org/kreta/PhpCsFixerConfig.svg?branch=master)](https://travis-ci.org/kreta/PhpCsFixerConfig)
+[![Build Status](https://travis-ci.org/lin3s/PhpCsFixerConfig.svg?branch=master)](https://travis-ci.org/lin3s/PhpCsFixerConfig)
 
-It's based on the ideas of [`refinery29/php-cs-fixer-config`](https://github.com/refinery29/php-cs-fixer-config/) and
-[`prooph/php-cs-fixer-config`](https://github.com/prooph/php-cs-fixer-config).
+It's based on [`kreta/php-cs-fixer-config`](https://github.com/kreta/php-cs-fixer-config/).
 
 ## Installation
 ```bash
-$ composer require --dev kreta/php-cs-fixer-config
+$ composer require --dev lin3s/php-cs-fixer-config
 ```
   
 ## Usage
@@ -18,10 +17,9 @@ Create a configuration file `.php_cs` in the root of your project:
 <?php
 
 /*
- * This file is part of the Kreta package.
+ * This file is part of the PhpCsFixerConfig project.
  *
- * (c) Beñat Espiña <benatespina@gmail.com>
- * (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,9 +27,9 @@ Create a configuration file `.php_cs` in the root of your project:
 
 declare(strict_types=1);
 
-use Kreta\PhpCsFixerConfig\KretaConfig;
+use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new KretaConfig();
+$config = new Lin3sConfig('LIN3S awesome project', '2017');
 $config->getFinder()->in(__DIR__ . '/src');
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
@@ -45,10 +43,9 @@ In case your project uses [PhpSpec][3] BDD test framework, also create a `.phpsp
 <?php
 
 /*
- * This file is part of the Kreta package.
+ * This file is part of the PhpCsFixerConfig project.
  *
- * (c) Beñat Espiña <benatespina@gmail.com>
- * (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -56,9 +53,9 @@ In case your project uses [PhpSpec][3] BDD test framework, also create a `.phpsp
 
 declare(strict_types=1);
 
-use Kreta\PhpCsFixerConfig\KretaConfig;
+use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new KretaConfig(true);
+$config = new Lin3sConfig('LIN3S awesome project', '2017', true);
 $config->getFinder()
     ->in(__DIR__ . '/tests/Spec')
     ->name('*Spec.php');
@@ -118,15 +115,9 @@ $ vendor/bin/php-cs-fixer fix -v
 $ vendor/bin/php-cs-fixer fix -v --config=.phpspec_cs 
 ```
 
-## Credits
-Kreta is created by:
->
-**@benatespina** - [benatespina@gmail.com](mailto:benatespina@gmail.com)<br>
-**@gorkalaucirica** - [gorka.lauzirika@gmail.com](mailto:gorka.lauzirika@gmail.com)
-
 ## Licensing Options
-[![License](https://poser.pugx.org/kreta/php-cs-fixer-config/license.svg)](https://github.com/kreta/PhpCsFixerConfig/blob/master/LICENSE)
+[![License](https://poser.pugx.org/lin3s/php-cs-fixer-config/license.svg)](https://github.com/LIN3S/PhpCsFixerConfig/blob/master/LICENSE)
 
-[1]: http://kreta.io/
+[1]: http://lin3s.com/
 [2]: http://cs.sensiolabs.org/
 [3]: http://www.phpspec.net/

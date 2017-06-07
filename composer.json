@@ -1,32 +1,22 @@
 {
-    "name": "kreta/php-cs-fixer-config",
-    "description": "PHP linting tool using PHP CS Fixer for Kreta packages",
+    "name": "lin3s/php-cs-fixer-config",
+    "description": "PHP linting tool using PHP CS Fixer for LIN3S projects",
     "keywords": [
-        "project",
-        "manager",
-        "development",
-        "tool",
+        "lin3s",
         "php-linter",
         "php-cs-fixer"
     ],
-    "homepage": "http://kreta.io",
     "license": "MIT",
-    "type": "library",
     "authors": [
         {
-            "name": "Beñat Espiña Diaz",
-            "email": "benatespina@gmail.com",
-            "homepage": "http://benatespina.com"
-        },
-        {
-            "name": "Gorka Laucirica Ibarra",
-            "email": "gorka.lauzirika@gmail.com",
-            "homepage": "http://gorkalaucirica.net"
+            "name": "LIN3S",
+            "email": "info@lin3s.com",
+            "homepage": "https://lin3s.com"
         }
     ],
     "require": {
         "php": "^7.1",
-        "friendsofphp/php-cs-fixer": "^2.1.0"
+        "friendsofphp/php-cs-fixer": "^2.3"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2"
@@ -39,8 +29,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Kreta\\PhpCsFixerConfig\\": "src/Kreta/PhpCsFixerConfig/",
-            "Kreta\\PhpCsFixerConfig\\Tests\\": "tests/"
+            "LIN3S\\PhpCsFixerConfig\\": "src/LIN3S/PhpCsFixerConfig/",
+            "LIN3S\\PhpCsFixerConfig\\Tests\\": "tests/"
         },
         "exclude-from-classmap": [
           "tests/"

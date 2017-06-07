@@ -1,10 +1,9 @@
 <?php
 
 /*
- * This file is part of the Kreta package.
+ * This file is part of the PhpCsFixerConfig library.
  *
- * (c) Beñat Espiña <benatespina@gmail.com>
- * (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * Copyright (c) 2017-present LIN3S <info@lin3s.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,9 +11,9 @@
 
 declare(strict_types=1);
 
-use Kreta\PhpCsFixerConfig\KretaConfig;
+use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
-$config = new KretaConfig(true);
+$config = new Lin3sConfig('PhpCsFixerConfig', '2017', true);
 $config->getFinder()
     ->in(__DIR__ . '/tests/Spec')
     ->name('*Spec.php');
