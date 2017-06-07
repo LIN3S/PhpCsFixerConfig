@@ -57,7 +57,7 @@ use LIN3S\PhpCsFixerConfig\Lin3sConfig;
 
 $config = new Lin3sConfig('LIN3S awesome project', '2017', true);
 $config->getFinder()
-    ->in(__DIR__ . '/tests/Spec')
+    ->in(__DIR__ . '/spec')
     ->name('*Spec.php');
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
